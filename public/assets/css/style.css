@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+    --primary-color: #059edb;
+    --header-height: 3rem;
+    --nav-width: 45px;
+    --sm: 12px;
+    --md: 14px;
+    --lg: 16px;
+    --first-color: #ffffff;
+    --first-color-light: #eaeef1;
+    --second-color: #ebeff2;
+    --second-color-light: #bfc6cd;
+    --white-color: #F7F6FB;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    /* padding: 0 1rem;             */
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    /* transition: .05  s; */
+    /* padding-top: 3.5rem; */
+    background-color: var(--second-color)
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    width: 100%;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    transition: .5s;
+}
+
+.center-header {
+    /* top: 0; */
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_toggle {
+    color: #059edb;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.header_img img {
+    width: 40px
+}
+
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    background-color: var(--first-color);
+    /* padding: .5rem 1rem 0 0; */
+    /* padding: 0; */
+    transition: .5s;
+    z-index: var(--z-fixed)
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem .8rem
+}
+
+.nav_logo {
+    
+    margin-bottom: 2rem;
+    align-content: center;
+}
+
+.nav_logo-icon {
+    padding-top: 4px;
+    font-size: 1.25rem;
+    color: var(--primary-color)
+}
+
+.nav_logo-name {
+    color: var(--primary-color);
+    font-weight: 700
+}
+
+.nav_link {
+    font-size: var(--sm);
+    position: relative;
+    color: var(--second-color-light);
+    margin-bottom: 0;
+    transition: .3s
+}
+
+.nav_link:hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.nav_icon {
+    font-size: 1.25rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: calc(var(--nav-width) + 1rem)
+        /* padding-left: 3rem; */
+}
+
+.active {
+    color: var(--primary-color)
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+.height-100 {
+    height: 100vh
+}
+
+.height-90 {
+    height: 92vh;
+    /* background-color: var(--white-color); */
+    border-radius: 10px 0px 0px 0px;
+}
+
+.font-sm {
+    font-size: var(--sm);
+}
+
+.font-md {
+    font-size: var(--md);
+}
+
+.font-lg {
+    font-size: var(--lg);
+}
+
+.icon {
+    color: #767f87;
+}
+
+.hover-primary:hover {
+    background-color: var(--primary-color) !important;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdownHouse {
+    /* position: relative; */
+    /* display: inline-block; */
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white-color);
+    min-width: 99%;
+    right: .1rem;
+    top: 3.3rem;
+    border-radius: 5px;
+    z-index: 1;
+
+    /* padding: .3rem; */
+}
+
+.notification-content {
+    overflow: auto;
+    height: 65vh;
+}
+
+.user-name {
+    display: none;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    /* display: block; */
+}
+
+.access-content {
+    min-width: 155px;
+    right: .1rem;
+    top: 1.7rem;
+
+}
+
+.dropdown-content a i,
+label {
+    cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-block {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdownHouse:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.notification-img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+/* Scroll */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--second-color-light) #DFE9EB;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background-color: #DFE9EB;
+    border: 10px solid var(--white-color);
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: var(--second-color-light);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color);
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: var(--primary-color);
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    body {
+        margin: calc(var(--header-height) + 1rem) 0 0 0;
+        padding-left: calc(var(--nav-width) + 0rem)
+    }
+
+    .header {
+        padding-top: 5px;
+        /* padding: 0 2rem 0 calc(var(--nav-width)) */
+    }
+
+    .header_img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .header_img img {
+        width: 45px
+    }
+
+    .l-navbar {
+        left: 0;
+        padding: 0;
+    }
+
+    .dropdownHouse {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        min-width: 300px;
+        right: .1rem;
+        top: 1.7rem;
+
+    }
+
+    .access-content {
+        min-width: 155px;
+        right: .1rem;
+        top: 1.7rem;
+
+    }
+
+    .user-name {
+        display: block;
+    }
+
+    .show {
+        width: calc(var(--nav-width) + 158px)
+    }
+
+    .body-pd {
+        padding-left: calc(var(--nav-width) + 158px)
+    }
+}

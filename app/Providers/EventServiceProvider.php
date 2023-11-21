@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Menu;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -14,6 +15,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array<class-string, array<int, class-string>>
      */
+    public $menus;
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
@@ -25,7 +27,14 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // $this->menus = Menu::menus();
+        // dd(Menu::menus());
+        // Event::listen(BuildingMenu::class, function (BuildingMenu $event) {
+            // Add some items to the menu...
+            // $event->menu->add(...Menu::menus());
+            // $event->menu->add('Administration');            
+            // $event->menu->add(...Menu::menusAdmin());
+        // });
     }
 
     /**
