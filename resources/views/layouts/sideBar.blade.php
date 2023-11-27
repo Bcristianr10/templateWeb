@@ -6,6 +6,32 @@
                 <span class="nav_logo-name">PanaBandas</span>
             </a>
             <div class="nav_list">
+
+                @foreach (App\Models\Menu::menus()->merge(App\Models\Menu::menusAdmin()) as $menu)                        
+                    <a href="#" class="nav_link">
+                        <i class='{{$menu['icon']}} nav_icon'></i>
+                        <span class="nav_name d-flex align-items-center gap-2">
+                            {{$menu['text']}}
+                            @if (array_key_exists('submenu',$menu))
+                            <i class='bx bx-chevron-down'></i>                                                    
+                            @endif
+                        </span>
+                    </a>
+                    @if (array_key_exists('submenu',$menu))                            
+                        @foreach ($menu['submenu'] as $submenu)
+                        {{-- <div class="ps-3">                    
+                            <i class='{{$submenu['icon']}}'></i>            
+                            <label for="">{{$submenu['text']}}</label>
+                        </div> --}}                        
+                        <a href="#" class="nav_link nav_option ps-4" onclick="optionMenuOP('dropdown-content')" id="{{$submenu['route']}}">
+                            <i class='ps-4 bx bx-bar-chart-alt-2 nav_icon bx-xs'></i>
+                            <span class="nav_name">Stats</span>
+                        </a>
+                        @endforeach                            
+                    @endif
+                @endforeach
+        
+{{-- 
                 <a href="#" class="nav_link active">
                     <i class='bx bxs-home nav_icon'></i>
                     <span class="nav_name">Dashboard</span>
@@ -30,6 +56,10 @@
                     <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
                     <span class="nav_name">Stats</span>
                 </a>
+                <a href="#" class="nav_link ps-4">
+                    <i class='ps-4 bx bx-bar-chart-alt-2 nav_icon bx-xs'></i>
+                    <span class="nav_name">Stats</span>
+                </a> --}}
             </div>
         </div>
         <a href="#" class="nav_link">

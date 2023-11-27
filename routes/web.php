@@ -14,5 +14,6 @@ use App\Models\Menu;
 */
 
 Route::get('/', function () {
+    // dd(App\Models\Menu::menus()->merge(App\Models\Menu::menusAdmin()));
     return view('layouts/main');
 });

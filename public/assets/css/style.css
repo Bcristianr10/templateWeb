@@ -122,7 +122,6 @@ a {
     color: var(--primary-color);
     font-weight: 700
 }
-
 .nav_link {
     font-size: var(--sm);
     position: relative;
